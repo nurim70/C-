@@ -34,6 +34,8 @@ void outputResult (int a, int b, int c, int d, int e, int f)
 	int five = 0;
 	int six = 0;
 
+	int grade;
+
 	one = (gen() % 45) + 1;
 
 	while (true)
@@ -90,7 +92,28 @@ void outputResult (int a, int b, int c, int d, int e, int f)
 
 	match = matchNumber(a, b, c, d, e, f, one, two, three, four, five, six);
 
-	cout << "You match " << match << " numbers!" << " You are in 5th place!" << endl;
+	if (match == 6)
+	{
+		grade = 1;
+	}
+	else if (match == 5)
+	{
+		grade = 3;
+	}
+	else if (match == 4)
+	{
+		grade = 4;
+	}
+	else if (match == 3)
+	{
+		grade = 5;
+	}
+	else
+	{
+		grade = 0;  // 등수가 없다는 의미에서 0을 집어넣었습니다.
+	}
+
+	cout << "You match " << match << " numbers!" << " You are in "  << grade << "th place!" << endl;
 	
 }
 
